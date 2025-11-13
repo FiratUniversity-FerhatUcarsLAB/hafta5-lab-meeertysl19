@@ -1,7 +1,7 @@
 /*
- * Ad Soyad: [ADINIZI BURAYA YAZIN]
- * Ogrenci No: [OGRENCI NUMARANIZI BURAYA YAZIN]
- * Tarih: [TARIHI BURAYA YAZIN]
+ * Ad Soyad: İsmet Mert Uysal
+ * Ogrenci No: 250542017
+ * Tarih: 13.11.2025
  * Aciklama: Gorev 2 - Fizik Formulu Asistani
  *
  * Bu program temel fizik formullerini kullanarak
@@ -18,50 +18,49 @@ public class FizikFormul {
     // METOT 1: Hız hesapla (v = s / t)
     public static double calculateVelocity(double distance, double time) {
         // v = mesafe / zaman
-        return 0.0; // Degistirin
+        return distance / time;
     }
 
     // METOT 2: İvme hesapla (a = Δv / t)
     public static double calculateAcceleration(double velocityChange, double time) {
         // a = hiz degisimi / zaman
-        return 0.0; // Degistirin
+        return velocityChange / time;
     }
 
     // METOT 3: Kuvvet hesapla (F = m * a)
     public static double calculateForce(double mass, double acceleration) {
         // F = kutle * ivme
-        return 0.0; // Degistirin
+        return mass * acceleration;
     }
 
     // METOT 4: İş hesapla (W = F * d)
     public static double calculateWork(double force, double distance) {
         // W = kuvvet * mesafe
-        return 0.0; // Degistirin
+        return force * distance;
     }
 
     // METOT 5: Güç hesapla (P = W / t)
     public static double calculatePower(double work, double time) {
         // P = is / zaman
-        return 0.0; // Degistirin
+        return work / time;
     }
 
     // METOT 6: Kinetik enerji (KE = 0.5 * m * v²)
     public static double calculateKineticEnergy(double mass, double velocity) {
         // KE = 0.5 * kutle * (hiz * hiz)
-        // Math.pow(velocity, 2) kullanabilirsiniz
-        return 0.0; // Degistirin
+        return 0.5 * mass * Math.pow(velocity, 2);
     }
 
     // METOT 7: Potansiyel enerji (PE = m * g * h)
     public static double calculatePotentialEnergy(double mass, double gravity, double height) {
         // PE = kutle * yercekimi * yukseklik
-        return 0.0; // Degistirin
+        return mass * gravity * height;
     }
 
     // METOT 8: Momentum (p = m * v)
     public static double calculateMomentum(double mass, double velocity) {
         // p = kutle * hiz
-        return 0.0; // Degistirin
+        return mass * velocity;
     }
 
     public static void main(String[] args) {
@@ -88,13 +87,14 @@ public class FizikFormul {
         double height = input.nextDouble();
 
         // HESAPLAMALARI YAP - Metotlari cagir
-        // 1. Hiz (v) hesaplanmali (KE ve Momentum icin gerekli)
-        // 2. Ivme (a) hesaplanmali (Kuvvet icin gerekli)
-        // 3. Kuvvet (F) hesaplanmali (Is icin gerekli)
-        // 4. Is (W) hesaplanmali (Guc icin gerekli)
-        // ... digerlerini hesaplayin
-  
-
+        double velocity = calculateVelocity(distance, time); // v = s/t
+        double acceleration = calculateAcceleration(deltaV, time); // a = Δv/t
+        double force = calculateForce(mass, acceleration); // F = m*a
+        double work = calculateWork(force, distance); // W = F*d
+        double power = calculatePower(work, time); // P = W/t
+        double kineticEnergy = calculateKineticEnergy(mass, velocity); // KE = 0.5*m*v^2
+        double potentialEnergy = calculatePotentialEnergy(mass, GRAVITY, height); // PE = m*g*h
+        double momentum = calculateMomentum(mass, velocity); // p = m*v
 
         // SONUCLARI YAZDIR
         System.out.println("\n========================================");
@@ -113,7 +113,6 @@ public class FizikFormul {
         System.out.println("\nENERJI:");
         System.out.printf("  Kinetik Enerji (KE)       : %.2f J\n", kineticEnergy);
         System.out.printf("  Potansiyel Enerji (PE)    : %.2f J\n", potentialEnergy);
-        // Toplam enerji = KE + PE
         System.out.printf("  Toplam Enerji             : %.2f J\n", (kineticEnergy + potentialEnergy)); 
 
         System.out.println("\nMOMENTUM:");
